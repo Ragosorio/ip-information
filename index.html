@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Information</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+    <main class="container">
+        <form id="form">
+          <label>IP del usuraio</label>
+          <input required id="input" type="text" placeholder="Introduce aquí la IP">
+          <small>Por ejemplo: 185.65.135.230</small>
+          <button type="submit" id="btn">
+            Buscar información de la IP
+          </button>
+        </form>
+      
+        <div>
+          <pre id="results"></pre>
+        </div>
+      </main>
+      <script src="/ipi.js"></script>
+</body>
+</html>
