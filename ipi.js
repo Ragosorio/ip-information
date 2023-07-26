@@ -1,6 +1,5 @@
 const OPTIONS = {
   method: "GET",
-  url: "https://ip-reputation-geoip-and-detect-vpn.p.rapidapi.com/",
   headers: {
     "X-RapidAPI-Key": "4c543c5543msh50b189c77d175edp129b4ajsne572e616645d",
     "X-RapidAPI-Host": "ip-reputation-geoip-and-detect-vpn.p.rapidapi.com",
@@ -27,10 +26,10 @@ const fetchIpInfo = (ip) => {
   }
 
   // Agregar la dirección IP a los parámetros del objeto OPTIONS
-  OPTIONS.params = { ip };
+ const url = `https://ip-reputation-geoip-and-detect-vpn.p.rapidapi.com/?ip=${ip}`
 
   // Usar la URL del objeto OPTIONS en la llamada fetch
-  return fetch(OPTIONS.url, OPTIONS)
+  return fetch(url, OPTIONS)
     .then((res) => res.json()) // Parsear la respuesta a JSON
     .catch((err) => console.error(err));
 };
