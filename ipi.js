@@ -12,11 +12,12 @@ const $form = $("#form");
 const $btn = $("#btn");
 const $input = $("#input");
 const $results = $("#results");
+let valorInputSubmit
 
 const fetchIpInfo = (ip) => {
   if (!ipAddressPattern.test(ip)) {
     $input.setAttribute("aria-invalid", "true");
-    $input.value = "Dirección ip invalida";
+    $input.value = "IP invalida";
 
     setTimeout(() => {
       $input.removeAttribute("aria-invalid", "true");
@@ -33,6 +34,13 @@ const fetchIpInfo = (ip) => {
     .then((res) => res.json()) // Parsear la respuesta a JSON
     .catch((err) => console.error(err));
 };
+
+$input.addEventListener("input", () => {
+  if($input.hasAttribute("aria-invalid")){
+    $input.value = ""
+    $input.removeAttribute("aria-invalid")
+  }
+})
 
 $form.addEventListener("submit", async (e) => {
   e.preventDefault();
